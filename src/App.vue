@@ -28,7 +28,22 @@
           <p class="text-base font-bold tracking-wide text-gray-500 uppercase">
             Months left
           </p>
-          <p>10</p>
+          <p>11</p>
+        </div>
+      </section>
+      <section>
+        <div class="p-4 mb-4 bg-white rounded-lg shadow-md md:p-6 lg:p-8">
+          <vue-frappe
+            id="test"
+            :labels="labels"
+            title="My Awesome Chart"
+            type="axis-mixed"
+            :height="400"
+            :colors="colors"
+            :dataSets="this.data"
+            :tooltipOptions="tooltipOptions"
+          >
+          </vue-frappe>
         </div>
       </section>
     </main>
@@ -40,6 +55,61 @@ import { ref } from "@vue/composition-api";
 
 export default {
   name: "app",
+  data() {
+    return {
+      colors: ["#48bb78", "#718096"],
+      labels: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      data: [
+        {
+          name: "Payed",
+          chartType: "line",
+          values: [20000]
+        },
+        {
+          name: "Projected",
+          chartType: "line",
+          values: [
+            20000,
+            18000,
+            16000,
+            14000,
+            12000,
+            10000,
+            8000,
+            6000,
+            4000,
+            2000,
+            0
+          ]
+        }
+      ],
+      tooltipOptions: {
+        formatTooltipY: value => {
+          if (value == undefined) {
+            return "Not payed yet";
+          }
+
+          return value.toLocaleString("en", {
+            style: "currency",
+            currency: "USD"
+          });
+        }
+      }
+    };
+  },
   setup() {
     const message = ref("🔥 Yo Vue 3 🔥");
     return { message };
