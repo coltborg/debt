@@ -2,4 +2,13 @@
 
 @tailwind components;
 
+/* TODO: change to .dataset-1 when adding payment */
+.dataset-0 .line-graph-path {
+  stroke-dasharray: 10px;
+}
+
+.chart .title {
+  @apply text-base font-bold tracking-wide text-gray-500 uppercase fill-current;
+}
+
 @tailwind utilities;
