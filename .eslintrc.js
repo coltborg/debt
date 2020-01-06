@@ -1,20 +1,30 @@
 module.exports = {
-  root: true,
-
   env: {
-    node: true
+    node: true,
   },
-
-  extends: ["plugin:vue/recommended", "@vue/prettier"],
-
-  rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off"
-  },
-
+  extends: ['plugin:vue/recommended', '@vue/prettier'],
   parserOptions: {
-    parser: "babel-eslint"
+    parser: 'babel-eslint',
   },
-
-  extends: ["plugin:vue/essential", "@vue/prettier"]
-};
+  root: true,
+  rules: {
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'vue/component-name-in-template-casing': [
+      'error',
+      'PascalCase',
+      {
+        registeredComponentsOnly: true,
+        ignores: [],
+      },
+    ],
+    'vue/html-closing-bracket-newline': [
+      'error',
+      {
+        singleline: 'never',
+        multiline: 'always',
+      },
+    ],
+    'vue/no-v-html': 'off',
+  },
+}

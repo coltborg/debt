@@ -21,16 +21,16 @@
 
 <script>
 export default {
-  name: "StatCards",
+  name: 'StatCards',
   props: {
     total: {
       type: String,
-      required: true
+      required: true,
     },
     monthsLeft: {
       type: Number,
-      required: true
-    }
-  }
-};
+      required: true,
+    },
+  },
+}
 </script>

@@ -5,7 +5,7 @@
   >
     <main class="container px-4 mx-auto md:px-8">
       <AppHeader />
-      <StatCards :monthsLeft="monthsLeft" :total="total" />
+      <StatCards :months-left="monthsLeft" :total="total" />
       <StatChart
         :colors="colors"
         :data-sets="dataSets"
@@ -17,25 +17,24 @@
 </template>
 
 <script>
-import { ref } from "@vue/composition-api";
 // Components
-import AppHeader from "@/components/AppHeader";
-import StatCards from "@/components/StatCards";
-import StatChart from "@/components/StatChart";
+import AppHeader from '@/components/AppHeader'
+import StatCards from '@/components/StatCards'
+import StatChart from '@/components/StatChart'
 
 // Use
-import useStats from "@/use/useStats";
-import useChartDetails from "@/use/useChartDetails";
+import useStats from '@/use/useStats'
+import useChartDetails from '@/use/useChartDetails'
 
 export default {
-  name: "app",
+  name: 'App',
   components: {
     AppHeader,
     StatCards,
-    StatChart
+    StatChart,
   },
   setup() {
-    return { ...useChartDetails(), ...useStats() };
-  }
-};
+    return { ...useChartDetails(), ...useStats() }
+  },
+}
 </script>

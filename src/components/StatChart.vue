@@ -6,10 +6,10 @@
         title="2020 Debt Payments"
         type="axis-mixed"
         :colors="colors"
-        :dataSets="dataSets"
+        :data-sets="dataSets"
         :height="400"
         :labels="labels"
-        :tooltipOptions="tooltipOptions"
+        :tooltip-options="tooltipOptions"
       >
       </vue-frappe>
     </div>
@@ -18,24 +18,24 @@
 
 <script>
 export default {
-  name: "StatChart",
+  name: 'StatChart',
   props: {
     colors: {
       type: Array,
-      required: true
+      required: true,
     },
     dataSets: {
       type: Array,
-      required: true
+      required: true,
     },
     labels: {
       type: Array,
-      required: true
+      required: true,
     },
     tooltipOptions: {
       type: Object,
-      required: true
-    }
-  }
-};
+      required: true,
+    },
+  },
+}
 </script>

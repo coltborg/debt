@@ -1,8 +1,8 @@
-import { ref } from "@vue/composition-api";
+import { ref } from '@vue/composition-api'
 
 export default function useChartDetails() {
   // TODO: add second color when payments happen
-  const colors = ref(["#718096"]); // ["#48bb78", "#718096"]
+  const colors = ref(['#718096']) // ["#48bb78", "#718096"]
   const dataSets = ref([
     // TODO: add payed data when payments happen
     // {
@@ -11,8 +11,8 @@ export default function useChartDetails() {
     //   values: [16816.06, 14000]
     // },
     {
-      name: "Projected",
-      chartType: "line",
+      name: 'Projected',
+      chartType: 'line',
       values: [
         16816.06,
         14816.06,
@@ -23,36 +23,36 @@ export default function useChartDetails() {
         4816.06,
         2816.06,
         816.06,
-        0
-      ]
-    }
-  ]);
+        0,
+      ],
+    },
+  ])
   const labels = ref([
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec"
-  ]);
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ])
   const tooltipOptions = ref({
     formatTooltipY: value => {
       if (value == undefined) {
-        return "Not payed yet";
+        return 'Not payed yet'
       }
 
-      return value.toLocaleString("en", {
-        style: "currency",
-        currency: "USD"
-      });
-    }
-  });
+      return value.toLocaleString('en', {
+        style: 'currency',
+        currency: 'USD',
+      })
+    },
+  })
 
-  return { colors, dataSets, labels, tooltipOptions };
+  return { colors, dataSets, labels, tooltipOptions }
 }
